@@ -41,9 +41,7 @@ pip install pandas numpy faker openai
 
 Set up OpenAI API Key (required for the GPT Model):
 
-```
-export OPENAI_API_KEY="your-api-key" 
-```
+
 ## Methods Overview
 ### Traditional Method
 
@@ -79,10 +77,15 @@ Outputs data in JSON format, which is then converted to a DataFrame.
 Requires an OpenAI API key and internet connection.
 
 ```
-
 import openai
-import json
 import pandas as pd
+import json
+
+# Set up your OpenAI API key
+openai.api_key = '<YOU API KEY>'
+
+def clean(dict_variable):
+    return next(iter(dict_variable.values()))
 
 prompt = """
 Generate synthetic employee data for an e-commerce company. Include the following fields:
@@ -100,7 +103,10 @@ response = openai.ChatCompletion.create(
 )
 
 customer_data = json.loads(response['choices'][0]['message']['content'])
-df_customers = pd.DataFrame(customer_data)
+# Convert to DataFrame
+df_customers = pd.DataFrame(clean(customer_data))
+print(df_customers)
+
 df_customers.to_csv("synthetic_employees-AI-2.csv", index=False)
 ```
 
