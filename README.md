@@ -27,7 +27,9 @@ This repository provides Python scripts to generate synthetic employee data for 
    ###  Clone the repository:
 
 ```
- git clone https://github.com/your-repo/synthetic-data-generator.git
+git clone https://github.com/<your-repo>/synthetic-data-generator.git
+```
+```
 cd synthetic-data-generator
  ```
 
