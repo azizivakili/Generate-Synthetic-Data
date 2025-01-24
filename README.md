@@ -1,6 +1,6 @@
 # Comparing Traditional vs. AI-Based Synthetic Data Generation
 
-In this project, we are going to generate a synthetic dataset using both OpenAI and traditional methods, and compare the results
+This project, presents synthetic dataset generation using both OpenAI and traditional methods and at the end will compare the results.
 
 This repository provides Python scripts to generate synthetic employee data for an e-commerce company using two methods:
 * Traditional Method 
