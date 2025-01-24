@@ -102,12 +102,21 @@ response = openai.ChatCompletion.create(
     messages=[{"role": "user", "content": prompt}]
 )
 
-customer_data = json.loads(response['choices'][0]['message']['content'])
+
+# Parse the response to extract JSON content
+
+customer_data = json.loads(response.choices[0].message.content)
+
+# Print the raw JSON data (optional)
+print(json.dumps(customer_data, indent=2))
+
 # Convert to DataFrame
 df_customers = pd.DataFrame(clean(customer_data))
 print(df_customers)
 
+#print to CSV file
 df_customers.to_csv("synthetic_employees-AI-2.csv", index=False)
+
 ```
 
 ## How to Run
